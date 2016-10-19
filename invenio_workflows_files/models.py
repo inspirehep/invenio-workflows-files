@@ -37,14 +37,22 @@ class WorkflowsBuckets(db.Model):
 
     workflow_object_id = db.Column(
         db.Integer,
-        db.ForeignKey(WorkflowObjectModel.id),
+        db.ForeignKey(
+            WorkflowObjectModel.id,
+            onupdate='CASCADE',
+            ondelete='CASCADE',
+        ),
         primary_key=True,
         nullable=False,
     )
 
     bucket_id = db.Column(
         UUIDType,
-        db.ForeignKey(Bucket.id),
+        db.ForeignKey(
+            Bucket.id,
+            onupdate='CASCADE',
+            ondelete='CASCADE',
+        ),
         primary_key=True,
         nullable=False,
     )
