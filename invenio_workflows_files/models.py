@@ -26,8 +26,8 @@
 
 from invenio_db import db
 from invenio_files_rest.models import Bucket
-from sqlalchemy_utils.types import UUIDType
 from invenio_workflows.models import WorkflowObjectModel
+from sqlalchemy_utils.types import UUIDType
 
 
 class WorkflowsBuckets(db.Model):
