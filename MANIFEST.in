@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#
 # This file is part of Invenio.
 # Copyright (C) 2016 CERN.
 #
@@ -35,3 +36,16 @@ include .dockerignore
 include .editorconfig
 include .tx/config
 recursive-include invenio_workflows_files *.po *.pot *.mo
+include *.rst
+include *.sh
+include *.txt
+include LICENSE
+include babel.ini
+include pytest.ini
+recursive-include docs *.bat
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+recursive-include examples *.py
+recursive-include invenio_workflows_files *.html
+recursive-include tests *.py
