@@ -62,7 +62,7 @@ install_requires = [
     'invenio-db[versioning]>=1.0.0a9',
     'invenio-files-rest>=1.0.0a3',
     'invenio-records-files>=1.0.0a5',
-    'invenio-workflows',
+    'invenio-workflows~=6.0.2',
 ]
 
 packages = find_packages()
