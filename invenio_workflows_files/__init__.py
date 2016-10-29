@@ -22,7 +22,7 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module adding invenio-files-rest integration for invenio-workflows."""
+"""Adds invenio-files-rest integration for invenio-workflows."""
 
 from __future__ import absolute_import, print_function
 
