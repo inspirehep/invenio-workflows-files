@@ -26,8 +26,8 @@
 
 from invenio_db import db
 from invenio_files_rest.models import Bucket
-from sqlalchemy_utils.types import UUIDType
 from invenio_workflows.models import WorkflowObjectModel
+from sqlalchemy_utils.types import UUIDType
 
 
 class WorkflowsBuckets(db.Model):
@@ -37,14 +37,22 @@ class WorkflowsBuckets(db.Model):
 
     workflow_object_id = db.Column(
         db.Integer,
-        db.ForeignKey(WorkflowObjectModel.id),
+        db.ForeignKey(
+            WorkflowObjectModel.id,
+            onupdate='CASCADE',
+            ondelete='CASCADE',
+        ),
         primary_key=True,
         nullable=False,
     )
 
     bucket_id = db.Column(
         UUIDType,
-        db.ForeignKey(Bucket.id),
+        db.ForeignKey(
+            Bucket.id,
+            onupdate='CASCADE',
+            ondelete='CASCADE',
+        ),
         primary_key=True,
         nullable=False,
     )

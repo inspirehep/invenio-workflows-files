@@ -28,7 +28,7 @@ from collections import OrderedDict
 
 from flask import current_app
 from invenio_files_rest.models import Bucket
-from invenio_records_files.api import FilesIterator, FileObject
+from invenio_records_files.api import FileObject, FilesIterator
 from invenio_workflows import WorkflowObject as _WorkflowObject
 
 from .models import WorkflowsBuckets

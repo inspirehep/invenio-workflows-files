@@ -22,7 +22,8 @@
 # waive the privileges and immunities granted to it by virtue of its status
 # as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-"""Invenio module adding invenio-files-rest integration for invenio-workflows."""
+"""Invenio module adding invenio-files-rest integration to invenio-workflows.
+"""
 
 import os
 
@@ -61,6 +62,7 @@ install_requires = [
     'invenio-db[versioning]>=1.0.0a9',
     'invenio-files-rest>=1.0.0a3',
     'invenio-records-files>=1.0.0a5',
+    'invenio-workflows~=6.0.2',
 ]
 
 packages = find_packages()
@@ -88,10 +90,12 @@ setup(
     platforms='any',
     entry_points={
         'invenio_base.api_apps': [
-            'invenio_workflows_files = invenio_workflows_files:InvenioWorkflowsFiles',
+            'invenio_workflows_files '
+            '= invenio_workflows_files:InvenioWorkflowsFiles',
         ],
         'invenio_base.apps': [
-            'invenio_workflows_files = invenio_workflows_files:InvenioWorkflowsFiles',
+            'invenio_workflows_files '
+            '= invenio_workflows_files:InvenioWorkflowsFiles',
         ],
         'invenio_i18n.translations': [
             'messages = invenio_workflows_files',
@@ -125,8 +129,6 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Development Status :: 1 - Planning',
     ],
