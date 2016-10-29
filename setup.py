@@ -25,14 +25,11 @@
 """Invenio module adding invenio-files-rest integration to invenio-workflows.
 """
 
-import os
-
 from setuptools import find_packages, setup
 
-readme = open('README.rst').read()
-history = open('CHANGES.rst').read()
+README = open('README.rst').read()
 
-tests_require = [
+TESTS_REQUIRE = [
     'check-manifest>=0.25',
     'coverage>=4.0',
     'isort>=4.2.2',
@@ -43,48 +40,45 @@ tests_require = [
     'pytest>=2.8.0',
 ]
 
-extras_require = {
+EXTRAS_REQUIRE = {
     'docs': [
         'Sphinx>=1.4.2',
     ],
-    'tests': tests_require,
+    'tests': TESTS_REQUIRE,
 }
 
-extras_require['all'] = []
-for reqs in extras_require.values():
-    extras_require['all'].extend(reqs)
+EXTRAS_REQUIRE['all'] = []
+for reqs in EXTRAS_REQUIRE.values():
+    EXTRAS_REQUIRE['all'].extend(reqs)
 
-setup_requires = [
+SETUP_REQUIRES = [
+    'autosemver~=0.1.9',
     'pytest-runner>=2.6.2',
 ]
 
-install_requires = [
+INSTALL_REQUIRES = [
+    'autosemver~=0.1.9',
+    'pytest-runner>=2.6.2',
     'invenio-db[versioning]>=1.0.0a9',
     'invenio-files-rest>=1.0.0a3',
     'invenio-records-files>=1.0.0a5',
     'invenio-workflows~=6.0.2',
 ]
 
-packages = find_packages()
+URL = 'https://github.com/inspirehep/invenio-workflows-files'
 
-
-# Get the version string. Cannot be done with import!
-g = {}
-with open(os.path.join('invenio_workflows_files', 'version.py'), 'rt') as fp:
-    exec(fp.read(), g)
-    version = g['__version__']
 
 setup(
     name='invenio-workflows-files',
-    version=version,
     description=__doc__,
-    long_description=readme + '\n\n' + history,
+    long_description=README,
     keywords='invenio TODO',
     license='GPLv2',
     author='CERN',
     author_email='admin@inspirehep.net',
-    url='https://github.com/inspirehep/invenio-workflows-files',
-    packages=packages,
+    url=URL,
+    bugtracker_url=URL + '/issues/',
+    packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
     platforms='any',
@@ -103,21 +97,11 @@ setup(
         'invenio_db.models': [
             'invenio_workflows_files = invenio_workflows_files.models'
         ],
-        # TODO: Edit these entry points to fit your needs.
-        # 'invenio_access.actions': [],
-        # 'invenio_admin.actions': [],
-        # 'invenio_assets.bundles': [],
-        # 'invenio_base.api_apps': [],
-        # 'invenio_base.api_blueprints': [],
-        # 'invenio_base.blueprints': [],
-        # 'invenio_celery.tasks': [],
-        # 'invenio_pidstore.minters': [],
-        # 'invenio_records.jsonresolver': [],
     },
-    extras_require=extras_require,
-    install_requires=install_requires,
-    setup_requires=setup_requires,
-    tests_require=tests_require,
+    extras_require=EXTRAS_REQUIRE,
+    install_requires=INSTALL_REQUIRES,
+    setup_requires=SETUP_REQUIRES,
+    tests_require=TESTS_REQUIRE,
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
@@ -132,4 +116,5 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Development Status :: 1 - Planning',
     ],
+    autosemver=True
 )
