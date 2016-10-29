@@ -29,10 +29,8 @@ from __future__ import absolute_import, print_function
 from .api import WorkflowObject
 from .models import WorkflowsBuckets
 from .ext import InvenioWorkflowsFiles
-from .version import __version__
 
 __all__ = (
-    '__version__',
     'InvenioWorkflowsFiles',
     'WorkflowObject',
     'WorkflowsBuckets',
