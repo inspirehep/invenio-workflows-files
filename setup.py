@@ -52,12 +52,12 @@ for reqs in EXTRAS_REQUIRE.values():
     EXTRAS_REQUIRE['all'].extend(reqs)
 
 SETUP_REQUIRES = [
-    'autosemver~=0.1.9',
+    'autosemver~=0.2,>=0.2',
     'pytest-runner>=2.6.2',
 ]
 
 INSTALL_REQUIRES = [
-    'autosemver~=0.1.9',
+    'autosemver~=0.2,>=0.2',
     'pytest-runner>=2.6.2',
     'invenio-db[versioning]>=1.0.0a9',
     'invenio-files-rest>=1.0.0a3',
@@ -77,7 +77,6 @@ setup(
     author='CERN',
     author_email='admin@inspirehep.net',
     url=URL,
-    bugtracker_url=URL + '/issues/',
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
@@ -116,5 +115,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Development Status :: 1 - Planning',
     ],
-    autosemver=True
+    autosemver={
+        'bugtracker_url': URL + '/issues/',
+    }
 )
