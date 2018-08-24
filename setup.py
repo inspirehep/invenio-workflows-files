@@ -90,6 +90,9 @@ setup(
             'invenio_workflows_files '
             '= invenio_workflows_files:InvenioWorkflowsFiles',
         ],
+        'invenio_db.alembic': [
+            'invenio_workflows_files = invenio_workflows_files:alembic',
+        ],
         'invenio_i18n.translations': [
             'messages = invenio_workflows_files',
         ],
