@@ -31,7 +31,7 @@ import sqlalchemy as sa
 
 revision = '3255c6f9aca0'
 down_revision = None
-branch_labels = None
+branch_labels = (u'invenio_workflows_files')
 depends_on = None
 
 
