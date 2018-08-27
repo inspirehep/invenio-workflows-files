@@ -41,7 +41,7 @@ def upgrade():
                     sa.Column('workflow_object_id', sa.Integer(),
                               nullable=False),
                     sa.Column('bucket_id',
-                              sqlalchemy_utils.types.uuid.UUIDType(length=16),
+                              sqlalchemy_utils.types.uuid.UUIDType(),
                               nullable=False),
                     sa.ForeignKeyConstraint(['bucket_id'],
                                             [u'files_bucket.id'],
